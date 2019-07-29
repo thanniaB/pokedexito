@@ -5,29 +5,32 @@ class PokemonInfo extends React.Component {
         return (
             <article>
                 <h1>Bulbasar</h1>
-                <ul class="types">
+                <ul className="types">
                     <li>Grass</li>
                 </ul>
                 <table>
-                    <caption>Base Stats</caption>
-                    <tr>
-                        <td>HP</td><td>90</td>
-                    </tr>
-                    <tr>
-                        <td>Attack</td><td>90</td>
-                    </tr>
-                    <tr>
-                        <td>Defense</td><td>90</td>
-                    </tr>
-                    <tr>
-                        <td>Sp. Attack</td><td>90</td>
-                    </tr>
-                    <tr>
-                        <td>Sp. Defense</td><td>90</td>
-                    </tr>
-                    <tr>
-                        <td>Speed</td><td>90</td>
-                    </tr>
+                <caption>Base Stats</caption>
+
+                    <tbody>
+                        <tr>
+                            <td>HP</td><td>90</td>
+                        </tr>
+                        <tr>
+                            <td>Attack</td><td>90</td>
+                        </tr>
+                        <tr>
+                            <td>Defense</td><td>90</td>
+                        </tr>
+                        <tr>
+                            <td>Sp. Attack</td><td>90</td>
+                        </tr>
+                        <tr>
+                            <td>Sp. Defense</td><td>90</td>
+                        </tr>
+                        <tr>
+                            <td>Speed</td><td>90</td>
+                        </tr>
+                    </tbody>
                 </table>
 
             </article>

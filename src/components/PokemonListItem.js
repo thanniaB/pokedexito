@@ -4,9 +4,9 @@ class PokemonListItem extends React.Component {
     render() {
         return (
             <li>
-                <img src="http://orig13.deviantart.net/521f/f/2016/064/f/e/vector__271___bulbasaur__2_by_dashiesparkle-d9axmb6.png" class="thumb" />
+                <img src="http://orig13.deviantart.net/521f/f/2016/064/f/e/vector__271___bulbasaur__2_by_dashiesparkle-d9axmb6.png" className="thumb" />
                 <div>
-                    <span class="number"> 001 </span>
+                    <span className="number"> 001 </span>
                     <h1> Bulbasaur </h1>
                 </div>
             </li>

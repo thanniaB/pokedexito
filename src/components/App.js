@@ -7,19 +7,19 @@ class App extends React.Component {
         return (
             <React.Fragment>
             <header> POKEDEXITO <input type="text" placeholder="search bar" /> </header>
-            <div class="flex flex-row">
+            <div className="flex flex-row">
                 <main>
                     <img src="http://vignette2.wikia.nocookie.net/pokemon/images/f/f2/Giovanni_Golem_anime.png/revision/latest?cb=20151110081031" />
-                    <section class="flex flex-row">
-                        <div class="pokemon-1">
+                    <section className="flex flex-row">
+                        <div className="pokemon-1">
                             <PokemonInfo />
                         </div>
-                        <div class="pokemon-2">
+                        <div className="pokemon-2">
                             <PokemonInfo />
                         </div>
                     </section>
                 </main>
-                <ul class="pokemon-list">
+                <ul className="pokemon-list">
                     <PokemonListItem />
                 </ul>
             </div>
