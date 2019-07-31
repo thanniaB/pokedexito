@@ -8,24 +8,18 @@ class Autocomplete extends React.Component {
 
     handleChange = (event) => {
         const { name, value } = event.target;
-        this.setState({ [name]: value });
         if (name === 'searchBarText') {
             this.autocomplete(value);
         }
     }
 
-    autocomplete = async (searchBarText) => {
-        try {
-            let autocompletedPokemons = [];
-            if (searchBarText !== '') {
-                const pokemonList = await pokemons;
-                autocompletedPokemons = pokemonList.filter(pokemon => pokemon.startsWith(searchBarText));
-            }
-            this.setState({ autocompletedPokemons });
-        } catch (error) {
-            console.log(error);
+    autocomplete = (searchBarText) => {
+        let autocompletedPokemons = [];
+        if (searchBarText !== '') {
+            const pokemonList = this.props.pokemons;
+            autocompletedPokemons = pokemonList.filter(pokemon => pokemon.startsWith(searchBarText));
         }
-
+        this.setState({ autocompletedPokemons });
     }
 
     render() {

@@ -7,7 +7,7 @@ class Header extends React.Component {
         return (
             <header className="flex flex-row space-between">
                 <h1>POKEDEXITO</h1>
-                <Autocomplete />
+                <Autocomplete pokemons = {this.props.pokemons} />
             </header>
         )
     }
