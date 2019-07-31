@@ -1,18 +1,19 @@
 import React from 'react';
 import PokemonListItem from './PokemonListItem';
 import PokemonInfo from './PokemonInfo';
-import Header from './Header';
 import { pokemons } from '../services/pokemon-names';
 
 class App extends React.Component {
     state = {
-        pokemons: []
+        pokemons: [],
+        autocompletedPokemons: []
     }
 
-    setPokemons = async () => {
+    setInitialPokemons = async () => {
         try {
             const pokemonList = await pokemons;
             this.setState({ pokemons: pokemonList });
+            this.setState({ autocompletedPokemons: pokemonList });
         } catch (error) {
             console.log(error);
         }
@@ -20,13 +21,32 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        this.setPokemons();
+        this.setInitialPokemons();
+    }
+
+    handleChange = (event) => {
+        const { name, value } = event.target;
+        if (name === 'searchBarText') {
+            this.autocomplete(value);
+        }
+    }
+
+    autocomplete = (searchBarText) => {
+        let autocompletedPokemons = [];
+        const pokemonList = this.state.pokemons;
+        autocompletedPokemons = pokemonList.filter(pokemon => pokemon.startsWith(searchBarText));
+        this.setState({ autocompletedPokemons });
     }
 
     render() {
         return (
             <React.Fragment>
-                <Header pokemons={this.state.pokemons} />
+                <header className="flex flex-row space-between">
+                    <h1>POKEDEXITO</h1>
+                    <div className="autocomplete">
+                        <input name="searchBarText" type="text" placeholder="Filter..." onChange={this.handleChange} />
+                    </div>
+                </header>
                 <div className="flex flex-row">
                     <main>
                         <img src="http://vignette2.wikia.nocookie.net/pokemon/images/f/f2/Giovanni_Golem_anime.png/revision/latest?cb=20151110081031" />
@@ -40,8 +60,8 @@ class App extends React.Component {
                         </section>
                     </main>
                     <ul className="pokemon-list">
-                        {this.state.pokemons.map((pokemon, index) => (
-                            <PokemonListItem name={pokemon} number={index+1} key={pokemon}/>
+                        {this.state.autocompletedPokemons.map((pokemon, index) => (
+                            <PokemonListItem name={pokemon} number={index + 1} key={pokemon} />
 
                         ))}
                     </ul>
