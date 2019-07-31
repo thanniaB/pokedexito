@@ -5,8 +5,8 @@ class Header extends React.Component {
 
     render() {
         return (
-            <header>
-                POKEDEXITO
+            <header className="flex flex-row space-between">
+                <h1>POKEDEXITO</h1>
                 <Autocomplete />
             </header>
         )

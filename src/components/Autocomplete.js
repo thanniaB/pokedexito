@@ -30,14 +30,14 @@ class Autocomplete extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
+            <div className="autocomplete">
                 <input name="searchBarText" type="text" placeholder="search bar" onChange={this.handleChange} />
                 <ul className="suggestions">
                     {this.state.autocompletedPokemons.map((pokemon) => (
                         <li>{pokemon}</li>
                     ))}
                 </ul>
-            </React.Fragment>
+            </div>
         )
     }
 

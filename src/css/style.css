@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Pro|Permanent+Marker&display=swap');
+
 /*cleanup*/
 * {
     box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
 }
 
 /*helpers*/
@@ -12,7 +18,64 @@
     flex-direction: row;
 }
 
+.space-between {
+    justify-content: space-between;
+}
+
 /*specific styles*/
+
+body {
+    font-family: 'Crimson Pro', serif;
+    background-image: url('img/square_bg.png');
+}
+
+#root {
+    height: 100vh;
+}
+
+header {
+    width: 100%;
+}
+
+header h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 3em;
+    margin-left: 1vw;
+}
+
+.autocomplete {
+    width: 65%;
+    position: relative;
+    margin-right: 1vw;
+    margin-top: 3em;
+}
+
+.autocomplete input {
+    width: 100%;
+    height: 4em;
+    border: 5px solid black;
+    transform: skew(-10deg, 0);
+    padding-left: 1em;
+}
+
+.autocomplete input:focus {
+    outline: none;
+    border-color: #f00;
+}
+
+.autocomplete .suggestions {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    background-color: #fff;
+    padding-bottom: 1em;
+}
+
+.autocomplete .suggestions li {
+    padding: 0.5em;
+    color: #666;
+}
+
 .thumb {
     width: 100px;
 }
