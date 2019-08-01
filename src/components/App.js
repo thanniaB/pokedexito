@@ -6,7 +6,10 @@ import { pokemons } from '../services/pokemon-names';
 class App extends React.Component {
     state = {
         pokemons: [],
-        autocompletedPokemons: []
+        autocompletedPokemons: [],
+        pokemon1: '',
+        pokemon2: '',
+        oddClick: true,
     }
 
     setInitialPokemons = async () => {
@@ -31,6 +34,17 @@ class App extends React.Component {
         }
     }
 
+    handleClick = (name) => {
+        if(this.state.oddClick) {
+            this.setState({pokemon1: name});
+            this.setState({oddClick: false});
+        } else {
+            this.setState({pokemon2: name});
+            this.setState({oddClick: true});
+        }
+
+    }
+
     autocomplete = (searchBarText) => {
         let autocompletedPokemons = [];
         const pokemonList = this.state.pokemons;
@@ -47,25 +61,20 @@ class App extends React.Component {
                         <input name="searchBarText" type="text" placeholder="Filter..." onChange={this.handleChange} />
                     </div>
                 </header>
-                <div className="flex flex-row">
-                    <main>
-                        <img src="http://vignette2.wikia.nocookie.net/pokemon/images/f/f2/Giovanni_Golem_anime.png/revision/latest?cb=20151110081031" />
-                        <section className="flex flex-row">
-                            <div className="pokemon-1">
-                                <PokemonInfo />
-                            </div>
-                            <div className="pokemon-2">
-                                <PokemonInfo />
-                            </div>
-                        </section>
-                    </main>
+                <main>
+                    <div className="pokemon-1">
+                        <PokemonInfo name={this.state.pokemon1} />
+                    </div>
+                    <div className="pokemon-2">
+                        <PokemonInfo name={this.state.pokemon2}/>
+                    </div>
                     <ul className="pokemon-list">
                         {this.state.autocompletedPokemons.map((pokemon, index) => (
-                            <PokemonListItem name={pokemon} number={index + 1} key={pokemon} />
+                            <PokemonListItem name={pokemon} number={index + 1} key={pokemon} handleClick={this.handleClick}/>
 
                         ))}
                     </ul>
-                </div>
+                </main>
             </React.Fragment>
         )
     }

@@ -77,6 +77,33 @@ header h1 {
     color: #666;
 }
 
+.pokemon-list {
+    height: 100vh;
+    overflow-y: scroll;
+}
+
 .thumb {
     width: 100px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+}
+
+.pokemon-list li:hover {
+    background-color: blanchedalmond;
+    cursor: pointer;
+}
+
+.pokemon-list li div {
+    padding: 1em 0;
+}
+
+.pokemon-list li h1 {
+    margin: 0;
+}
+
+.pokemon-list li span {
+    color: #666;
 }
