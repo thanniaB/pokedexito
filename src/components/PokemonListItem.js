@@ -24,7 +24,6 @@ class PokemonListItem extends React.Component {
 
             if (currentPokemon.game_indices[0]) {
                 let gameIndex = currentPokemon.game_indices[0].game_index.toString();
-                console.log(gameIndex);
                 if(gameIndex.length === 1) {
                     gameIndex = `00${gameIndex}`;
                 } else if(gameIndex.length === 2) {

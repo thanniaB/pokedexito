@@ -6,7 +6,6 @@ export const pokemons = fetch('https://pokeapi.co/api/v2/pokemon/?limit=964').th
         return results[key].name;
     });
     return names;
-})
-    .catch(function (err) {
-        console.log(err);
-    });
+}).catch(function (err) {
+    console.log(err);
+});

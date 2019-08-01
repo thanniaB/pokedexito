@@ -107,3 +107,7 @@ main {
 .pokemon-list li span {
     color: #666;
 }
+
+.pokemon-info h1 {
+    text-transform: capitalize;
+}
