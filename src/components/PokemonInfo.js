@@ -21,7 +21,7 @@ class PokemonInfo extends React.Component {
             if (currentPokemon.types) {
                 let types = [];
                 for (let x = 0; x > currentPokemon.types.length; x++) {
-                    types.push(types[x].type.name);
+                    types.push(currentPokemon.types[x].type.name);
                 }
                 this.setState({ types });
             }
@@ -29,7 +29,7 @@ class PokemonInfo extends React.Component {
             if (currentPokemon.stats) {
                 let stats = {};
                 for (let x = 0; x > currentPokemon.stats.length; x++) {
-                    stats[stats[x].stat.name] = stats[x].base_stat;
+                    stats[currentPokemon.stats[x].stat.name] = currentPokemon.stats[x].base_stat;
                 }
                 this.setState({ stats });
             }
@@ -42,10 +42,10 @@ class PokemonInfo extends React.Component {
             if (currentPokemon.moves) {
                 let moves = [];
                 for (let x = 0; x > currentPokemon.moves.length; x++) {
-                    if (moves[x].version_group_details[0].move_learn_method.name === 'level_up') {
+                    if (currentPokemon.moves[x].version_group_details[0].move_learn_method.name === 'level_up') {
                         moves.push({
-                            "name": moves[x].move.name,
-                            "learned_at_level": moves[x].version_group_details[0].level_learned_at
+                            "name": currentPokemon.moves[x].move.name,
+                            "learned_at_level": currentPokemon.moves[x].version_group_details[0].level_learned_at
                         });
                     }
                 }
