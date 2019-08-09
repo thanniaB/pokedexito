@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Crimson+Pro|Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Pro|PT+Mono|Permanent+Marker&display=swap');
 
 /*cleanup*/
 * {
@@ -17,6 +17,10 @@ ul {
 
 .flex-row {
     flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
 }
 
 .space-between {
@@ -108,6 +112,25 @@ main {
     color: #666;
 }
 
+.pokemon-info {
+    font-size: 24px;
+    padding-left: 5%;
+}
+
 .pokemon-info h1 {
     text-transform: capitalize;
+}
+
+.pokemon-info .types {
+    font-family: 'PT Mono', monospace;
+}
+
+.pokemon-info caption {
+    text-align:left;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.pokemon-info table {
+    margin-bottom: 20px;
 }

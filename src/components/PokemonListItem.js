@@ -40,7 +40,7 @@ class PokemonListItem extends React.Component {
     }
 
     handleClick = () => {
-        this.props.handleClick(this.props.name);
+        this.props.handleClick(this.props.name, this.state.spriteUrl);
     }
 
     render() {

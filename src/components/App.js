@@ -7,8 +7,8 @@ class App extends React.Component {
     state = {
         pokemons: [],
         autocompletedPokemons: [],
-        pokemon1: '',
-        pokemon2: '',
+        pokemon1: {},
+        pokemon2: {},
         oddClick: true,
     }
 
@@ -34,12 +34,12 @@ class App extends React.Component {
         }
     }
 
-    handleClick = (name) => {
+    handleClick = (name, spriteUrl) => {
         if(this.state.oddClick) {
-            this.setState({pokemon1: name});
+            this.setState({pokemon1: {name: name, spriteUrl: spriteUrl}});
             this.setState({oddClick: false});
         } else {
-            this.setState({pokemon2: name});
+            this.setState({pokemon2: {name: name, spriteUrl: spriteUrl}});
             this.setState({oddClick: true});
         }
 
@@ -63,10 +63,10 @@ class App extends React.Component {
                 </header>
                 <main>
                     <div className="pokemon-1">
-                        <PokemonInfo name={this.state.pokemon1} />
+                        <PokemonInfo name={this.state.pokemon1.name} spriteUrl={this.state.pokemon1.spriteUrl}/>
                     </div>
                     <div className="pokemon-2">
-                        <PokemonInfo name={this.state.pokemon2}/>
+                        <PokemonInfo name={this.state.pokemon2.name} spriteUrl={this.state.pokemon2.spriteUrl}/>
                     </div>
                     <ul className="pokemon-list">
                         {this.state.autocompletedPokemons.map((pokemon, index) => (
