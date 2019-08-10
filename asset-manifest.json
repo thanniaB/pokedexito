@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pokedexito/static/css/main.db23153d.chunk.css",
+    "main.js": "/pokedexito/static/js/main.63089efb.chunk.js",
+    "main.js.map": "/pokedexito/static/js/main.63089efb.chunk.js.map",
+    "runtime~main.js": "/pokedexito/static/js/runtime~main.7f2d25e8.js",
+    "runtime~main.js.map": "/pokedexito/static/js/runtime~main.7f2d25e8.js.map",
+    "static/js/2.781ff5ca.chunk.js": "/pokedexito/static/js/2.781ff5ca.chunk.js",
+    "static/js/2.781ff5ca.chunk.js.map": "/pokedexito/static/js/2.781ff5ca.chunk.js.map",
+    "index.html": "/pokedexito/index.html",
+    "precache-manifest.abedc4e378f748eef4f94f0cf776d8cf.js": "/pokedexito/precache-manifest.abedc4e378f748eef4f94f0cf776d8cf.js",
+    "service-worker.js": "/pokedexito/service-worker.js",
+    "static/css/main.db23153d.chunk.css.map": "/pokedexito/static/css/main.db23153d.chunk.css.map"
+  }
+}
