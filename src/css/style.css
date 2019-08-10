@@ -134,3 +134,10 @@ main {
 .pokemon-info table {
     margin-bottom: 20px;
 }
+
+footer {
+    font-family: 'PT Mono', monospace;
+    font-size: 0.5em;
+    padding: 1em;
+    color: #666;
+}

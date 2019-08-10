@@ -75,6 +75,7 @@ class App extends React.Component {
                         ))}
                     </ul>
                 </main>
+                <footer> Thannia Blanchet 2019 </footer>
             </React.Fragment>
         )
     }
