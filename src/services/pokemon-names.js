@@ -1,4 +1,4 @@
-export const pokemons = fetch('https://pokeapi.co/api/v2/pokemon/?limit=809').then(function (response) {
+export const pokemons = fetch('https://pokeapi.co/api/v2/pokemon/?limit=891').then(function (response) {
     return response.json();
 }).then(function (pokemonJson) {
     const results = pokemonJson.results;
