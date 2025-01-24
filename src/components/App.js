@@ -75,6 +75,9 @@ class App extends React.Component {
                         ))}
                     </ul>
                 </main>
+                <footer>
+                    Last updated Jan 24, 2025 to add Gen 9 Pokemon
+                </footer>
             </React.Fragment>
         )
     }
